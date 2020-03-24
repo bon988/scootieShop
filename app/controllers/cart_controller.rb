@@ -1,4 +1,5 @@
 class CartController < ApplicationController
+  before_action :authenticate_user!
   def add
     # get the Id of the product
     id = params[:id]
@@ -34,6 +35,17 @@ class CartController < ApplicationController
     cart = session[:cart]
     cart[id] = cart[id] + 1
   
+    redirect_to :action => :index
+  end
+  
+  def remove
+    # TODO: remove item from the sesion
+    # get the id of the item you want to remove from the cart
+
+    id = params[:id]
+    cart = session[:cart]
+    cart.delete id
+
     redirect_to :action => :index
   end
   

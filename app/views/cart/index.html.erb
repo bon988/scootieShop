@@ -21,7 +21,7 @@
  </td>
 
  <td class="title"><%= link_to item.title, item %></td>
- <td><a href="">Remove From Cart</a></td>
+ <td><a href="cart/remove/<%= item.id %>">Remove From Cart</a></td>
 <td> <a href="cart/increase/<%= item.id %>" >Increase Items<i class='fas fa-arrow-alt-circledown'></i></a></td>
  </td>
  <td> <a href="cart/reduce/<%= item.id %>" >Reduce Items<i class='fas fa-arrow-alt-circledown'></i></a></td>
