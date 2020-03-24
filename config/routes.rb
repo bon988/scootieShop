@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'orderitems/index'
+  get 'orderitems/show'
+  get 'orderitems/new'
+  get 'orderitems/edit'
+  resources :orders do 
+    resource :orderitems
+  end
+  
+  devise_for :users do
+    resources :orders
+  end
+  
+  get '/checkout' => 'cart#createOrder'
   
   resources :items
   root 'items#index'
