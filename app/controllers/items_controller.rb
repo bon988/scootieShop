@@ -60,6 +60,16 @@ class ItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
+  def paid
+    flash[:notice] = 'Transaction Complete'
+    @order = Order.last
+    @order.update_attribute(:status , "Paid by User: #{current_user.email}")
+    #"Paid by User:#{current_user.id} #{current_user.name} #{current_user.surname}")
+    redirect_to "/cart/clear"
+  end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -71,4 +81,5 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(:title, :description, :price, :image_url, :category, :stock)
     end
+
 end

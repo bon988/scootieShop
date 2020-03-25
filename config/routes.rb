@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   resources :items
   root 'items#index'
   
+  get '/paid/:id', to: 'items#paid'
+  
   get '/cart/clear', to: 'cart#clear'
   get '/cart/remove/:id', to: 'cart#remove'
   get '/cart/reduce/:id', to: 'cart#reduce'
