@@ -13,32 +13,45 @@
 
   <body>
     <header>
-      <h1><%= link_to "Scootie Shop", "/" %></h1>
-      <nav>
-        <ul><li><%= link_to "Cart", "/cart" %></li>
+      <h1><%= link_to "ScootieShop", "/" %></h1>
 
-          <% if user_signed_in? %>
-            <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
-            <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-            <li><%= link_to "View Orders", "/orders"  %></li>
-          <% else %>
-            <li><%= link_to 'Register', new_user_registration_path %></li> 
-            <li><%= link_to 'Sign in', new_user_session_path %></li>
-          <% end %>
-
-
-        <% if session[:login] == 1 %> 
-          <li><%= link_to "Admin Log Out", "/logout" %></li>          
+      <div class="topnav" id="myTopnav">
+        <%= link_to "ScootieShop", "/"%>
+        <%= link_to "Cart", "/cart" %>
+        <% if user_signed_in? %>
+          <%= link_to 'Edit Profile', edit_user_registration_path %>
+          <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+          <%= link_to "View Orders", "/orders"  %>
         <% else %>
-          <li><%= link_to "Admin Log In", "/login" %></li>
+          <%= link_to 'Register', new_user_registration_path %>
+          <%= link_to 'Sign in', new_user_session_path %>
         <% end %>
+        <% if session[:login] == 1 %> 
+          <%= link_to "Admin Log Out", "/logout" %>       
+        <% else %>
+          <%= link_to "Admin Log In", "/login" %>
+        <% end %>
+        
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
 
-        </ul>
-      </nav>
     </header>
     <div clas="containe-yield">
       <%= yield %>
     </div>
     <footer>This is footer</footer>
+    
+<script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+</script>
   </body>
 </html>
