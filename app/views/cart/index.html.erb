@@ -1,45 +1,79 @@
 <p id="notice"><%= notice %></p>
-<div id="itemsContainer">
- 
- <% if @cart.empty? %>
- <h1> Your cart is empty</h1>
-<%end%>
-
-
- <table id="customers">
- <% total = 0 %>
- <% @cart.each do |id, quantity| %>
-
- <% item = Item.find_by_id(id) %>
-
- <tr>
- <td>
- <div class="image">
- <%= link_to (image_tag item.image_url, :style =>"height:40px"), item %>
- </div>
-
- </td>
-
- <td class="title"><%= link_to item.title, item %></td>
- <td><a href="">Remove From Cart</a></td>
-<td> <a href="cart/increase/<%= item.id %>" >Increase Items<i class='fas fa-arrow-alt-circledown'></i></a></td>
- </td>
- <td> <a href="cart/reduce/<%= item.id %>" >Reduce Items<i class='fas fa-arrow-alt-circledown'></i></a></td>
- </td>
- <td class="price"><%= number_to_currency(item.price, :unit =>"€") %></td>
- <td class="quantity"><%= quantity %></td>
- <td class="price"><%= number_to_currency(quantity * item.price, :unit =>"€") %></td>
-
- </tr>
-
- <% total += quantity * item.price %>
- <% end %>
- <tr>
- Grang Total: <%= number_to_currency(total, :unit => "€") %>
- </tr>
-
- </table>
- 
- <p><a href="/" class="button">Continue Shopping</a></p>
- <a href="/cart/clear" class="button">Empty Cart</a>
- </div>
+<div class="cart-page-container">
+  <% if @cart.empty? %>
+   <h2> Your cart is empty</h2>
+     <div class="navigation-buttons">
+     <a href="/" class="cart-btn">Continue Shopping</a>
+    </div>
+  <%else%>
+  
+   <!-- Menu -->
+   <div class="cart-container">
+    <div class="column-item-pic">
+    </div>
+    
+    <div class="column-item-name">
+     <h4>Item in your cart</h4>
+    </div>
+    
+    <div class="column-item-price">
+     <h4>Item price</h4>
+    </div>
+    
+    <div class="column-item-quantity">
+     <h4>Quantity</h4>
+    </div>
+    
+    <div class="column-item-total-price">
+     <h4>total price</h4>
+    </div>
+   </div>
+   
+   <!-- /Menu -->
+    
+    
+    <!-- Content of the cart -->
+   <% total = 0 %>
+   <% @cart.each do |id, quantity| %>
+   <% item = Item.find_by_id(id) %>
+     
+   <div class="cart-container">
+    <div class="column-item-pic">
+     <div class="image">
+      <%= link_to (image_tag item.image_url, :style =>"height:100px"), item %>
+     </div>
+    </div>
+    
+    <div class="column-item-name">
+      <%= link_to item.title, item %>
+    </div>
+     
+    <div class="column-item-price">
+     <%= number_to_currency(item.price, :unit =>"€") %>
+    </div>
+     
+    <div class="column-item-quantity">
+     <%= quantity %>
+     <a class="sign-add" href="cart/increase/<%= item.id %>">+</a>
+     <a class="sign-decrease" href="cart/reduce/<%= item.id %>">-</a>
+     <a class="sign-remove" href="cart/remove/<%= item.id %>">x</a>
+    </div>
+     
+    <div class="column-item-total-price">
+     <%= number_to_currency(quantity * item.price, :unit =>"€") %>
+    </div> 
+   </div> 
+   
+   <% total += quantity * item.price %>
+   <% end %>
+   <!-- /Content -->
+   
+    <p class="grand-total">Grand Total: <%= number_to_currency(total, :unit => "€") %></p>
+   
+    <div class="navigation-buttons">
+     <a href="/cart/clear" class="remove-btn">Empty Cart</a>
+     <a href="/" class="cart-btn">Continue Shopping</a>
+     <a href="/checkout" class="cart-btn">Checkout</a>
+    </div>
+ <%end%>
+</div>

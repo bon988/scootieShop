@@ -1,3 +1,134 @@
 // Place all the styles related to the Cart controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.cart-page-container {
+    height: 75vh;
+
+    h2 {
+        text-align: center;
+    }
+
+    .cart-container {
+        display: flex;
+
+        .column-item-pic {
+            width: 10%;
+            text-align: center;
+        }
+
+        .column-item-name {
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .column-item-price {
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .column-item-quantity {
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .column-item-total-price {
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .grand-total {
+        text-align: right;
+        margin-right: 80px;
+        font-weight: bold;
+    }
+
+    .cart-btn {
+        color: #fff !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: blue;
+        padding: 10px;
+        border-radius: 4px;
+        display: inline-block;
+        border: none;
+        transition: all 0.3s ease 0s;
+
+        &:hover {
+            background: #434343;
+            -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+            -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+            box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+            transition: all 0.4s ease 0s;
+        }
+    }
+
+    .remove-btn {
+        color: red !important;
+        padding: 10px;
+
+        &:hover {
+            background: none !important;
+        }
+    }
+
+    .navigation-buttons {
+        margin: auto;
+        padding: 50px 0 50px 0;
+        width: 50%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .sign-remove {
+        font-weight: bold;
+        margin: 0 0 0 12px;
+        font-size: 15px;
+        color: red !important;
+        text-decoration: none;
+
+        border: 1px solid black;
+        padding: 10px;
+
+        &:hover {
+            background: none;
+            color: red;
+        }
+    }
+
+    .sign-add {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0 12px 0 12px;
+        color: green;
+        text-decoration: none;
+
+        border: 1px solid black;
+        padding: 10px;
+
+        &:hover {
+            background: none;
+            color: green;
+        }
+    }
+
+    .sign-decrease {
+        font-weight: bold;
+        font-size: 25px;
+        color: red !important;
+        text-decoration: none;
+
+        border: 1px solid black;
+        padding: 10px;
+
+        &:hover {
+            background: none;
+            color: red;
+        }
+    }
+}
