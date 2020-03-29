@@ -25,8 +25,13 @@ class CartController < ApplicationController
   def reduce
     id = params[:id]
     cart = session[:cart]
-    cart[id] = cart[id] - 1
-  
+
+    if cart[id] == 1
+      cart.delete id
+    else
+      cart[id] = cart[id] - 1
+    end
+
     redirect_to :action => :index
   end
   
