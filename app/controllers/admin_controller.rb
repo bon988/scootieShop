@@ -4,14 +4,16 @@ class AdminController < ApplicationController
   end
 
   def upgrade_admin
-     @user = User.find_by(params[:id])
-     @user.update_attribute(:admin, true)
+     user = User.find(params[:id])
+     user.admin = true;
+     user.save
      redirect_to :admin
   end
   
   def downgrade_admin
-    @user = User.find_by(params[:id])
-    @user.update_attribute(:admin, false)
+    user = User.find(params[:id])
+    user.admin = false;
+    user.save
     redirect_to :admin
   end
   
