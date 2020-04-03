@@ -44,9 +44,14 @@
                  <input type="hidden" name="currency_code" value="EUR">
                  <input type="hidden" name="amount" value="<%= @overall %>">
                  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
-                <input type="hidden" name="return" value="#" > <!--this url shall be changed upon deployment-->
+                <input type="hidden" name="return" value="#" > <!--this url shall be changed to "/paid" upon deployment-->
             </form>
          </td>
+         
+        <!-- 
+        <td><h2>  <a href="/paid/<%= @order.id %>" class="button">Pay Now</a></h2></td>
+        -->
+         
       </tr>
 
 </table>
