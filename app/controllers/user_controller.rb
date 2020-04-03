@@ -12,6 +12,5 @@ class UserController < ApplicationController
         flash[:notice] = "Admin logged out!!"
         redirect_to :controller => :items
     end    
-   
-    
+  
 end
