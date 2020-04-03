@@ -1,4 +1,8 @@
 class UserController < ApplicationController
+    def show
+        @user = User.find(params[:id])
+    end
+    
     def login
         session[:login] = 1
         session[:cart] = nil
