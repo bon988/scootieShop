@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'admin/home'
   get 'orderitems/index'
   get 'orderitems/show'
   get 'orderitems/new'
@@ -10,6 +11,9 @@ Rails.application.routes.draw do
   devise_for :users do
     resources :orders
   end
+  
+  
+  
   
   get '/checkout' => 'cart#createOrder'
   
@@ -27,6 +31,10 @@ Rails.application.routes.draw do
   
   get '/login', to: 'user#login' 
   get '/logout', to: 'user#logout'
+
+  get '/admin', to: 'admin#users'
+  get '/admin/upgrade/:id', to: 'admin#upgrade_admin'
+  get '/admin/downgrade/:id', to: 'admin#downgrade_admin'
   
   root :to => 'site#index'
 end
