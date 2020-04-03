@@ -35,6 +35,5 @@ Rails.application.routes.draw do
   get '/admin', to: 'admin#users'
   get '/admin/upgrade/:id', to: 'admin#upgrade_admin'
   get '/admin/downgrade/:id', to: 'admin#downgrade_admin'
-  
   root :to => 'site#index'
 end
