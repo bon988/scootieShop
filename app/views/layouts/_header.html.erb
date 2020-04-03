@@ -1,4 +1,4 @@
-   <header>
+   <header class = "header">
       <h1><%= link_to "ScootieShop", "/" %></h1>
 
       <div class="topnav" id="myTopnav">
@@ -16,6 +16,8 @@
             <% if session[:login] == 1 %> 
               <%= link_to "Admin Log Out", "/logout" %>
               <%= link_to "Manage Users", admin_path %>
+              <%= link_to "Manage Inventory", admin_inventory_path %>
+
             <% else %>
               <%= link_to "Admin Log In", "/login" %>
             <% end %>

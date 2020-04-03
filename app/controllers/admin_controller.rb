@@ -17,4 +17,8 @@ class AdminController < ApplicationController
     redirect_to :admin
   end
   
+  def manageInventory
+    @items = Item.all
+  end
+
 end
