@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   resources :items
   root 'items#index'
   
+  post '/search' => 'items#search'
+  
   get '/paid/:id', to: 'items#paid'
   
   get '/cart/clear', to: 'cart#clear'

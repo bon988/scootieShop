@@ -11,6 +11,13 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
   end
+  
+  # Search products
+  def search
+     st = "%#{params[:q]}%"
+     @items = Item.where("category like ?", st)
+  end
+
 
   # GET /items/new
   def new
