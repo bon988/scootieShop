@@ -1,15 +1,17 @@
-.header {
-    flex-shrink: 0;
+header {
     max-height: 350px;
-    background-color: #5656d9;
+    background-color:	#9edbfa;
 
     h1 {
         text-align: center;
-        margin-top: 0;
-        padding-top: 20px;
+        margin-top: 0px;
+        padding-top: 80px;
+        padding-bottom: 30px;
+        font-size: 80px;
+        letter-spacing: 3px;
 
         a {
-            color: yellow !important;
+            color:	#ffff !important;
             text-decoration: none;
         }
     }
@@ -18,23 +20,26 @@
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  background-color: #d0d6e2;
 }
 
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #999999;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size:14px;
+  
 }
 
 .topnav a:hover {
-  background-color: #16166e;
-  color: black;
+  background-color: 	#1d2230;
+  color:  	#fff;
+  border: 3px solid 	#333;
 }
+
 
 .topnav a.active {
   background-color: #4CAF50;
