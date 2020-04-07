@@ -1,8 +1,8 @@
 <% if (current_user && current_user.admin) || @users.size <= 1 %> 
 
-<h1>Users</h1>
+<h2>Users</h2>
 
-<table>
+<table class ="admin-users">
   <thead>
     <tr>
       <th>User ID</th>
@@ -24,11 +24,11 @@
         <td><%= user.created_at %></td>
         <td><%= user.updated_at %></td>
         <% if user.admin %>
-            <td>Admin</td>
-            <td><a href="admin/downgrade/<%= user.id %>">Downgrade to User</a></td>
+            <td class = "admin-label">Admin</td>
+            <td class = "admin-btn"><%= link_to "Downgrade to User", {controller: "admin", action: "downgrade_admin", id: user.id}, :class => "update-btn upgrade" %></td>
         <% else %>
             <td>User</td>
-            <td><a href="admin/upgrade/<%= user.id %>">Upgrade to Admin</a></td>
+            <td class = "admin-btn"><%= link_to "Upgrade to Admin", {controller: "admin", action: "upgrade_admin", id: user.id}, :class => "update-btn downgrade" %></td>
         <% end %>
       </tr>
     <% end %>
