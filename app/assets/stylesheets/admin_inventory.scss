@@ -1,41 +1,38 @@
-$items-header: #0C0F12;
-$items-header-border: #1565C0;
+$items-header: #464E51;
 $items-border: #d9d9d9;
-$row-bg: #f2f2f2;
+$row-bg: #f5f5f5;
 
 div{
     box-sizing: border-box;
 }
 
-
 .items-table-container {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
-  max-width:1051px;
+  margin: 5px auto;
+  max-width:950px;
 }
 
 
 .items-table {
   display: flex;
   flex-flow: row wrap;
-  border-left: solid 1px $items-border;
   transition: 0.5s;
-  &:first-of-type {
-    border-top: solid 1px $items-header-border;
-    border-left: solid 1px $items-header-border;
-  }
   &:first-of-type .item-row {
     background: $items-header;
     color: white;
-    border-color: $items-header-border;
+    font-weight: bold;
   }
-  &.row:nth-child(odd) .item-row{
+  &.row{
+    &:nth-child(odd){
     background: $row-bg;
-  }
-  &:hover {
-    background: #F5F5F5;
+    }
+    
+    &:hover {
+    background: #ddd;
     transition: 500ms;
+    }
+    
   }
 }
 
@@ -43,8 +40,25 @@ div{
   width: 150px;
   text-align: center;
   padding: 0.5em 0.5em;
-  border-right: solid 1px $items-border;
-  border-bottom: solid 1px $items-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+  &:first-of-type{
+    width:50px;
+  }
+  
+  &:nth-of-type(2) a{
+    text-decoration: none;
+    font-weight: bold;
+    color:$items-header;
+  }
+  
+  &.admin-label{
+      color:#4CAF50;
+  }
+  
 }
 
  .btn {
@@ -52,8 +66,8 @@ div{
         text-transform: uppercase;
         text-decoration: none;
         padding: 5px;
+        margin:4px;
         border-radius: 4px;
-        display: inline-block;
         border: none;
         transition: all 0.3s ease 0s;
 
