@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'popular_products/popular'
   get 'admin/home'
   get 'orderitems/index'
   get 'orderitems/show'
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
   
   get '/login', to: 'user#login' 
   get '/logout', to: 'user#logout'
+  get '/popular_products', to: 'popular_products#popular'
 
   get '/admin', to: 'admin#users'
   get '/admin/upgrade/:id', to: 'admin#upgrade_admin'
