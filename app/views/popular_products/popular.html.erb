@@ -1,4 +1,5 @@
-<div class="card-container">
+<h2>Popular Products</h2>
+<div id="popular-product" class="card-container">
 <% @items.limit(2).order(:id).each do |item| %>
   <div class="card">
     <%= link_to (image_tag item.image_url, :class => "img-item"), item %>

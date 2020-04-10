@@ -8,10 +8,13 @@
           <%= link_to 'Edit Profile', edit_user_registration_path %>
           <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
           <%= link_to "View Orders", "/orders"  %>
+          <%= link_to "Popular Products", "/popular_products"  %>
           <%=render 'layouts/search'%>
         <% else %>
           <%= link_to 'Register', new_user_registration_path %>
           <%= link_to 'Sign in', new_user_session_path %>
+          <%= link_to "Popular Products", "/popular_products"  %>
+          <%=render 'layouts/search'%>
         <% end %>
         <% if current_user && current_user.admin %>
             <% if session[:login] == 1 %> 
