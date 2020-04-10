@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
      st = "%#{params[:q]}%"
      @items = Item.where("category like ?", st)
   end
-
+  
   # GET /items/new
   def new
     @item = Item.new
