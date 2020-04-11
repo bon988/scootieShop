@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<div class = "showitem">
 <p>
   <strong>Title:</strong>
   <%= @item.title %>
@@ -29,6 +30,8 @@
   <strong>Stock:</strong>
   <%= @item.stock %>
 </p>
+
+</div>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

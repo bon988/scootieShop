@@ -17,7 +17,7 @@
       <p>Price <%= number_to_currency(item.price, :unit => "€") %></p>
       <p>In Stock: <%= item.stock %></p>
     </div>
-     
+
     <div class="card-btns"> 
       <a href="/cart/<%= item.id %>" class="btn">Add To Cart</a>
       <%= link_to 'Show', item, {:class => "btn"} %>
@@ -29,4 +29,3 @@
   </div>
 <% end %>
 </div>
-
