@@ -1,17 +1,42 @@
-div{
-    text-align:center;
+h1 {
+    text-align: center;
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 50px;
 }
 
-.form{
-    width:450px;
-	padding:30px;
-	margin:40px auto;
-	background: #FFF;
-	border-radius: 10px;
-	-webkit-border-radius:10px;
-	-moz-border-radius: 10px;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
-	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
-	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.13);
 
+.signup, .signin, .confirminstruc, .changepassword, .forgotpassword {
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 280px;
+    margin-right: 280px;
+    margin-bottom: 100px;
+    padding-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
+
+
+.signin label{
+	margin-bottom: 0px;
+	padding-top: 20px;
+	padding-bottom: 0px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.signup label{
+	margin-bottom: 0px;
+	padding-top: 20px;
+	padding-bottom: 0px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+}
+
