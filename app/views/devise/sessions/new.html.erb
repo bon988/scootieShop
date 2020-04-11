@@ -1,18 +1,18 @@
 <div class = "signin">
   
-<h1>Sign in</h1>
+<h2>Sign in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 <div class="form">
   <br/>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <area><%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "inputs" %></area>
   </div>
 
   <div class="field">
     <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <area><%= f.password_field :password, autocomplete: "current-password", :class => "inputs" %></area>
   </div>
 
   <% if devise_mapping.rememberable? %>
