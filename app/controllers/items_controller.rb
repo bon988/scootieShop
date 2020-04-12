@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
   
   def category
     catName = params[:title]
-    @items = Item.where(title: catName)
+    @items = Item.where(category: catName)
   end
   
   # Search products
