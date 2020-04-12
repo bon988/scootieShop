@@ -1,0 +1,9 @@
+<% if (current_user && current_user.admin) || @users.size <= 1 %> 
+  <h2>Category</h2>
+    <%= render 'form', category: @category %>
+    <%= link_to 'Show', @category %> |
+<% else %>
+  <p>Unauthorized User</p>
+    <%= link_to "Go to ScootieShop's Homepage", root_path %>
+<% end %>
+

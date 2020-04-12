@@ -16,12 +16,13 @@
           <%= link_to "Popular Products", "/popular_products"  %>
           <%=render 'layouts/search'%>
         <% end %>
+        
         <% if current_user && current_user.admin %>
             <% if session[:login] == 1 %> 
               <%= link_to "Admin Log Out", "/logout" %>
               <%= link_to "Manage Users", admin_path %>
+              <%= link_to "Create Category", admin_category_path %>
               <%= link_to "Manage Inventory", admin_inventory_path %>
-
             <% else %>
               <%= link_to "Admin Log In", "/login" %>
             <% end %>
@@ -33,3 +34,4 @@
       </div>
 
     </header>
+    

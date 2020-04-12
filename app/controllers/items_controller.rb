@@ -5,11 +5,17 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    @categories = Category.all
   end
 
   # GET /items/1
   # GET /items/1.json
   def show
+  end
+  
+  def category
+    catName = params[:title]
+    @items = Item.where("category like ? ", catName)
   end
   
   # Search products
@@ -76,6 +82,8 @@ class ItemsController < ApplicationController
     redirect_to "/cart/clear"
   end
   
+ 
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -87,5 +95,5 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(:title, :description, :price, :image_url, :category, :stock)
     end
-
+    
 end
