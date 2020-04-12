@@ -5,7 +5,10 @@
            <p><%= category.title %></p>
             <p><%= category.description %></p>
            <%= image_tag(category.image, :class => "img-item") %>
-           <p><a href="/category/<%= category.title %>" class="buttons"><%= category.title %></a></p>
+            </div>
+             
+           <p><%= link_to category.title, {controller: "items", action: "category", title: category.title}, class: "buttons"%></a></p>
     </div>
 <% end %>
+
 

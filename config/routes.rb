@@ -39,12 +39,15 @@ Rails.application.routes.draw do
   
   get '/admin/inventory', to: 'admin#manageInventory'
   
-  get '/admin/category', to: 'admin#editCategories'
+
+  get '/admin/category', to: 'categories#index'
   post 'admin/category' => 'items#index'
   
   get 'category/:title', to: 'items#category'
   
-  
+  resources :categories
   
   root :to => 'site#index'
 end
+
+ 

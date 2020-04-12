@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
   
   def category
     catName = params[:title]
-    @items = Item.where("category like ? ", catName)
+    @items = Item.where(title: catName)
   end
   
   # Search products
