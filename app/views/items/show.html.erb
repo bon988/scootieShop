@@ -15,11 +15,19 @@
           <div class = price>
           <%= number_to_currency(@item.price, :unit => "€") %>
           </div>
-          <a href="/cart/<%= @item.id %>" class="btn cart">Add To Cart</a>
+          <% if @item.stock > 0 %> 
+            <a href="/cart/<%= @item.id %>" class="btn">Add To Cart</a>
+          <% end %>
         </div>
-        <div class = "stocks">
+        <% if @item.stock > 0 %>
+        <div class="stocks">
           <%= @item.stock %> items remaining in stock
         </div>
+        <% else %>
+        <div class="stocks" style="color:red;">
+          <%= @item.stock %> items remaining in stock
+        </div>
+        <% end %>
       </div>
 
       <div class = "description">
