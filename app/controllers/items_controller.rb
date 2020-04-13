@@ -22,7 +22,9 @@ class ItemsController < ApplicationController
   # Search products
   def search
      st = "%#{params[:q]}%"
-     @items = Item.where("category like ?", st)
+     @search_term = st
+     @itemsCategory = Item.where("category like ?", st)
+     @itemsTitle = Item.where("title like ?", st)
   end
   
   # GET /items/new
