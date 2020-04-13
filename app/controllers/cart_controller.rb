@@ -20,7 +20,7 @@ class CartController < ApplicationController
     end
   
     redirect_to :action => :index
-    #redirect_to root_path
+    #redirect_back(fallback_location: root_path)
   end
   
   def reduce
