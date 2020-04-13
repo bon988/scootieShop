@@ -1,37 +1,54 @@
 <p id="notice"><%= notice %></p>
 
 <div class = "showitem">
-<p>
-  <strong>Title:</strong>
-  <%= @item.title %>
-</p>
+  <div class = "showitem-container">
+    <div class = "image">
+      <%= image_tag(@item.image_url, class: "image-item") %>
+    </div>
+    
+    <div class = "metadata">
+      <div class = "section">
+        <div class = "title">
+        <%= @item.title %>
+        </div>
+        <div class = "price-cart">
+          <div class = price>
+          <%= number_to_currency(@item.price, :unit => "€") %>
+          </div>
+          <a href="/cart/<%= @item.id %>" class="btn cart">Add To Cart</a>
+        </div>
+        <div class = "stocks">
+          <%= @item.stock %> items remaining in stock
+        </div>
+      </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @item.description %>
-</p>
+      <div class = "description">
+        <%= @item.description %>
+      </div>
+      
+      <div class = "othertitle">You May Also Like</div>
+      <div class = "otheritems-container">
+        <% @otheritems.each do |item| %>
+          <div class = "otheritem">
+            <div><%= link_to image_tag(item.image_url, class: "image-thumbnail"), item %></div>
+            <div class = "itemtitle"><%= item.title %></div>
+          </div>
+        <% end %> 
+      </div>
+      
+      <div class = "btn category">
+        Find more <%= link_to @item.category, {controller: "items", action: "category", title: @item.category} %>
+      </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @item.price %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @item.image_url %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @item.category %>
-</p>
-
-<p>
-  <strong>Stock:</strong>
-  <%= @item.stock %>
-</p>
+    </div>
+  </div>
 
 </div>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+
+
+
+<% if session[:login] == 1 %>   
+  <%= link_to 'Edit', edit_item_path(@item) %> |
+  <%= link_to 'Back', items_path %>
+<% end %>

@@ -5,11 +5,18 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    @categories = Category.all
   end
 
   # GET /items/1
   # GET /items/1.json
   def show
+    @otheritems = Item.where(category: @item.category).order(:stocks).sample(3)
+  end
+  
+  def category
+    catName = params[:title]
+    @items = Item.where(category: catName)
   end
   
   # Search products
@@ -75,6 +82,8 @@ class ItemsController < ApplicationController
     #"Paid by User:#{current_user.id} #{current_user.name} #{current_user.surname}")
     redirect_to "/cart/clear"
   end
+  
+ 
   
 
   private

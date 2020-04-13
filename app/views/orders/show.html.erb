@@ -19,7 +19,7 @@
       
         <div class="items-table row">
             <div class="item-row" style="width: 300px"><%= @order.order_date %></div>
-            <div class="item-row" style="width: 200px"><%= @order.user %></div>
+            <div class="item-row" style="width: 200px"><%= @order.user.name %></div>
             <div class="item-row"><%= @order.status %></div>
             <div class="item-row btn" style="width: 139px"><%= link_to 'Edit', edit_order_path(@order), :class =>"button" %></div>
         </div>
