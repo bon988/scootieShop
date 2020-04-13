@@ -15,11 +15,7 @@
           <div class = price>
           <%= number_to_currency(@item.price, :unit => "€") %>
           </div>
-          <% if @item.stock > 0 %>
             <a href="/cart/<%= @item.id %>" class="btn cart">Add To Cart</a>
-          <% else %>
-            <div>Out of Stock</div>
-          <% end %>
         </div>
         <div class = "stocks">
           <%= @item.stock %> items remaining in stock
