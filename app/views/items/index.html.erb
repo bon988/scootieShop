@@ -14,11 +14,18 @@
       <p><%= item.description %></p>
       <p><%= item.category %></p>
       <p>Price <%= number_to_currency(item.price, :unit => "€") %></p>
-      <p>In Stock: <%= item.stock %></p>
+      <% if item.stock > 0 %> 
+        <p>In Stock: <%= item.stock %></p>
+      <% else %> 
+        <p>Currently out of stock</p>
+      <% end %> 
     </div>
      
-    <div class="card-btns"> 
-      <a href="/cart/<%= item.id %>" class="btn">Add To Cart</a>
+    <div class="card-btns">
+      <% if item.stock > 0 %> 
+        <a href="/cart/<%= item.id %>" class="btn">Add To Cart</a>
+      <% end %>      
+      
       <%= link_to 'Show', item, {:class => "btn"} %>
       <% if session[:login] == 1 %>   
         <%= link_to 'Edit', edit_item_path(item), {:class => "btn"} %>
