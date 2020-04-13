@@ -28,10 +28,10 @@
     
     <td>Order Total: &euro; <%= @total %></td>
        
-    <% shipping = 30 %>
-      <% @overall = shipping + @total%>
+    <% tax = 30 %>
+      <% @overall = tax + @total%>
       <tr>
-          <td>Shipping &euro;30</td>
+          <td>Tax &euro;30</td>
           <td>You Pay &euro; <%= @overall %></td>
       </tr>
         <tr>
