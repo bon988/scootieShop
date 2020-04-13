@@ -1,10 +1,9 @@
 <div class = "payment">
     <div id="header">
-        <h1>Thanks for your order <%= @user.name if !@user.name.blank? %>! </h1>
-        <h1>Your payment is confirmed! </h1>
+        <h1>Thanks  <%= @user.name if !@user.name.blank? %>! Your payment is confirmed! </h1>
     </div>
     
-    <div>Order confirmation number: <%= @order.id %></div>
+    <div class = "order-referenece">Order confirmation number: <%= @order.id %></div>
     
     <div class = "items-container">
         <div class="order">
@@ -18,8 +17,8 @@
             <div class = "orderitem">
                 <% item = Orderitem.find_by_id(id) %>
                 <div class ="image-title">
-                    <div class = "image"><%= image_tag(Item.find_by_id(id).image_url, class: "image-thumbnail") %></div>
-                    <div class = "title"><%= item.title %></div>
+                    <div class = "image"><%= link_to image_tag(Item.find_by_id(id).image_url, class: "image-thumbnail"), Item.find_by_id(id) %></div>
+                    <div class = "title"><%= link_to item.title, Item.find_by_id(id) %></div>
                 </div>
                 <div class = "quantity"><%= item.quantity %></div>
                 <div class = "amount"><%= number_to_currency(item.quantity * item.price, :unit => "€") %></div>
@@ -31,9 +30,11 @@
         
           <% tax = 30 %>
           <% @overall = tax + @total%>
-         <div>
-              <div>Tax &euro;30</div>
-              <div>You Paid &euro; <%= @overall %></div>
+         <div class = "total">
+              <div class = "tax">Tax &euro;30</div>
+              <div class = "total">You Paid &euro; <%= @overall %></div>
          </div>
+
+         
     </div>
 </div>

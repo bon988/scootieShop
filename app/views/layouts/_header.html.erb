@@ -16,7 +16,6 @@
           <%= link_to "Popular Products", "/popular_products"  %>
           <%=render 'layouts/search'%>
         <% end %>
-        
         <% if current_user && current_user.admin %>
             <% if session[:login] == 1 %> 
               <%= link_to "Admin Log Out", "/logout" %>

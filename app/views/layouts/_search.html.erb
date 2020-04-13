@@ -1,8 +1,9 @@
-<div class="searchBox" >
+<div class="search-box" >
     <%= form_tag("/search", :method => "post") do %>
     <div class="box">
-    <p class="search"><%= text_field_tag(:q) %></p>
-    <p class="search"><%= submit_tag("Search") %></p>
-   </div>
+        <p class="search"><%= text_field_tag(:q) %></p>
+        <p class="search"><%= submit_tag("Search") %></p>
+        
+    </div>
     <% end %>
 </div>

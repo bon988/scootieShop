@@ -5,6 +5,13 @@ h2 {
     text-align: center;
 }
 
+.line {
+    width: 150px;
+    height: 4px;
+    background: #9edbfa;
+    border: none;
+}
+
 .card-container {
     box-sizing: border-box;
     display: flex;
@@ -20,7 +27,7 @@ h2 {
         
 
         &:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px 0 #9edbfa;
         }
 
         h4 {
@@ -51,17 +58,16 @@ h2 {
                 padding: 4px;
                 border-radius: 4px;
                 display: inline-block;
-                border: none;
+                border: 1px solid #9edbfa;
                 transition: all 0.3s ease 0s;
                 
 
                 &:hover {
                     background: #ffff;
-                    padding: 3px;
-                    border: 1px solid 	#333;
-                    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-                    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-                    box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+                    border: 1px solid #9edbfa;
+                    -webkit-box-shadow: 0px 5px 40px -10px #9edbfa;
+                    -moz-box-shadow: 0px 5px 40px -10px #9edbfa;
+                    box-shadow: 5px 40px -10px #9edbfa;
                     transition: all 0.4s ease 0s;
                 }
             }
@@ -138,12 +144,27 @@ h2 {
         }
         
         
-        .btn{
+        .btn {
+            color: #0d1a26 !important;
+            text-transform: uppercase;
             text-decoration: none;
+            background: #d0d6e2;
+            padding: 4px;
             border-radius: 4px;
             display: inline-block;
-            border: none;
+            border: 1px solid #9edbfa;
             transition: all 0.3s ease 0s;
+                
+
+            &:hover {
+                background: #ffff;
+                border: 1px solid #9edbfa;
+                -webkit-box-shadow: 0px 5px 40px -10px #9edbfa;
+                -moz-box-shadow: 0px 5px 40px -10px #9edbfa;
+                box-shadow: 5px 40px -10px #9edbfa;
+                transition: all 0.4s ease 0s;
+            }
+                   
 
             &.cart{
                 text-transform: uppercase;

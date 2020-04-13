@@ -49,31 +49,30 @@
     }
 
     .buttons{
-    color: #0d1a26 !important;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: #d0d6e2;
-    padding: 8px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    border-radius: 4px;
-    display: inline-block;
-    border: none;
-    transition: all 0.3s ease 0s;
-                
-    &:hover {
-    background: #ffff;
-    padding: 7px;
-    border: 1px solid #333;
-    -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-    -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
-    box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
-    transition: all 0.4s ease 0s;
-    
+        color: #0d1a26 !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: #d0d6e2;
+        padding: 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        border-radius: 4px;
+        display: inline-block;
+        border: 1px solid #9edbfa;
+        transition: all 0.3s ease 0s;
+                    
+        &:hover {
+        background: #ffff;
+        border: 1px solid #9edbfa;
+        -webkit-box-shadow: 0px 5px 40px -10px #9edbfa;
+        -moz-box-shadow: 0px 5px 40px -10px #9edbfa;
+        box-shadow: 5px 40px -10px #9edbfa;
+        transition: all 0.4s ease 0s;
+        
+        }
     }
-}
 
 
     .remove-btn {

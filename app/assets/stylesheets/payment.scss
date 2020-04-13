@@ -1,4 +1,6 @@
 .payment{
+    
+
      .items-container{
          display: flex;
          flex-direction: column;
@@ -17,26 +19,27 @@
                  flex-direction: row;
                  justify-content: center;
                  align-items: center;
-                 max-width: 600px;
-                 
+
                  &:first-child{
                      margin-top: 20px;
                      margin-bottom: 10px;
-                     padding-bottom: 10px;
+                     padding: 10 10px;
                      text-transform: uppercase;
                      font-weight: bold;
-                     border-bottom: 1px solid gray;
+                     background: #dcdcdc;
+                     border-bottom: 1px solid #dcdcdc;
                  }
                  
                  &:last-child{
-                     border-bottom: 1px solid gray;
+                     border-bottom: 1px solid #dcdcdc;
                      padding-bottom: 10px;
                  }
                  
                  .image-title{
                      display: flex;
                      flex-direction: column;
-                     width: 200px;
+                     width: 150px;
+                     padding: 5px;
 
                      .image-thumbnail{
                          height: 80px;
@@ -44,17 +47,18 @@
                      
                      .title{
                          text-transform: uppercase;
-                         font-weight: bold;
-                         
+
                      }
                  }
                  
                  .quantity{
                      width: 200px;
+                     padding: 5px;
                  }
                  
                  .amount{
                      width: 200px;
+                     padding: 5px;
                  }
                  
              }
@@ -63,4 +67,13 @@
          }
          
      }
+     
+     .total{
+         width: 450px;
+         display:flex;
+         flex-direction: column;
+         align-items: center;
+         margin: 20px;
+     }
+     
 }
