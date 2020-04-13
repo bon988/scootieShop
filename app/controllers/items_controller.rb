@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
+    @otheritems = Item.where(category: @item.category).order(:stocks).sample(3)
   end
   
   def category
@@ -95,5 +96,5 @@ class ItemsController < ApplicationController
     def item_params
       params.require(:item).permit(:title, :description, :price, :image_url, :category, :stock)
     end
-    
+
 end

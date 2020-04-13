@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
 <div class = "showitem">
   <div class = "showitem-container">
     <div class = "image">
@@ -27,15 +26,28 @@
         <%= @item.description %>
       </div>
       
-      <div class = "btn category">
-        <%= link_to @item.category, '#' %>
+      <div class = "othertitle">You May Also Like</div>
+      <div class = "otheritems-container">
+        <% @otheritems.each do |item| %>
+          <div class = "otheritem">
+            <div><%= link_to image_tag(item.image_url, class: "image-thumbnail"), item %></div>
+            <div class = "itemtitle"><%= item.title %></div>
+          </div>
+        <% end %> 
       </div>
       
+      <div class = "btn category">
+        Find more <%= link_to @item.category, {controller: "items", action: "category", title: @item.category} %>
+      </div>
 
-      
     </div>
   </div>
+
 </div>
+
+
+
+
 <% if session[:login] == 1 %>   
   <%= link_to 'Edit', edit_item_path(@item) %> |
   <%= link_to 'Back', items_path %>
