@@ -72,8 +72,12 @@
          width: 450px;
          display:flex;
          flex-direction: column;
-         align-items: center;
          margin: 20px;
+
+         .total-paid{
+             text-transform: uppercase;
+             font-weight: bold;
+         }
      }
      
 }
