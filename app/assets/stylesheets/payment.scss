@@ -1,0 +1,66 @@
+.payment{
+     .items-container{
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         
+         .order{
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             
+             
+             .orderitem{
+                 display: flex;
+                 flex-direction: row;
+                 justify-content: center;
+                 align-items: center;
+                 max-width: 600px;
+                 
+                 &:first-child{
+                     margin-top: 20px;
+                     margin-bottom: 10px;
+                     padding-bottom: 10px;
+                     text-transform: uppercase;
+                     font-weight: bold;
+                     border-bottom: 1px solid gray;
+                 }
+                 
+                 &:last-child{
+                     border-bottom: 1px solid gray;
+                     padding-bottom: 10px;
+                 }
+                 
+                 .image-title{
+                     display: flex;
+                     flex-direction: column;
+                     width: 200px;
+
+                     .image-thumbnail{
+                         height: 80px;
+                     }
+                     
+                     .title{
+                         text-transform: uppercase;
+                         font-weight: bold;
+                         
+                     }
+                 }
+                 
+                 .quantity{
+                     width: 200px;
+                 }
+                 
+                 .amount{
+                     width: 200px;
+                 }
+                 
+             }
+             
+             
+         }
+         
+     }
+}

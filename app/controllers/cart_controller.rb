@@ -94,4 +94,12 @@ class CartController < ApplicationController
     
     #redirect_to '/orderConfirmed/'
   end
+  
+  
+  def paid
+    @user = User.find(current_user.id)
+    @order = @user.orders.last
+    @order.status = "Paid"
+    @orderitems = @order.orderitems
+  end
 end
