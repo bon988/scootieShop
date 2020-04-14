@@ -47,6 +47,9 @@ Rails.application.routes.draw do
   
   resources :categories
   
+  
+  get '/paid', to: 'cart#paid'
+  
   root :to => 'site#index'
 end
 

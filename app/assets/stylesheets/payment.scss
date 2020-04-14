@@ -1,0 +1,83 @@
+.payment{
+    
+
+     .items-container{
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         
+         .order{
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             align-items: center;
+             
+             
+             .orderitem{
+                 display: flex;
+                 flex-direction: row;
+                 justify-content: center;
+                 align-items: center;
+
+                 &:first-child{
+                     margin-top: 20px;
+                     margin-bottom: 10px;
+                     padding: 10 10px;
+                     text-transform: uppercase;
+                     font-weight: bold;
+                     background: #dcdcdc;
+                     border-bottom: 1px solid #dcdcdc;
+                 }
+                 
+                 &:last-child{
+                     border-bottom: 1px solid #dcdcdc;
+                     padding-bottom: 10px;
+                 }
+                 
+                 .image-title{
+                     display: flex;
+                     flex-direction: column;
+                     width: 150px;
+                     padding: 5px;
+
+                     .image-thumbnail{
+                         height: 80px;
+                     }
+                     
+                     .title{
+                         text-transform: uppercase;
+
+                     }
+                 }
+                 
+                 .quantity{
+                     width: 200px;
+                     padding: 5px;
+                 }
+                 
+                 .amount{
+                     width: 200px;
+                     padding: 5px;
+                 }
+                 
+             }
+             
+             
+         }
+         
+     }
+     
+     .total{
+         width: 450px;
+         display:flex;
+         flex-direction: column;
+         margin: 20px;
+
+         .total-paid{
+             text-transform: uppercase;
+             font-weight: bold;
+         }
+     }
+     
+}
