@@ -9,6 +9,16 @@
           <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
           <%= link_to "View Orders", "/orders"  %>
           <%= link_to "Popular Products", "/popular_products"  %>
+          <% if current_user && current_user.admin %>
+              <% if session[:login] == 1 %> 
+                <%= link_to "Admin Log Out", "/logout", class: "admin" %>
+                <%= link_to "Manage Users", admin_path, class: "admin" %>
+                <%= link_to "Manage Inventory", admin_inventory_path, class: "admin" %>
+                <%= link_to "Create Category", admin_category_path, class: "admin" %>
+              <% else %>
+                <%= link_to "Admin Log In", "/login" %>
+              <% end %>
+          <% end %>
           <%=render 'layouts/search'%>
         <% else %>
           <%= link_to 'Register', new_user_registration_path %>
@@ -16,16 +26,8 @@
           <%= link_to "Popular Products", "/popular_products"  %>
           <%=render 'layouts/search'%>
         <% end %>
-        <% if current_user && current_user.admin %>
-            <% if session[:login] == 1 %> 
-              <%= link_to "Admin Log Out", "/logout" %>
-              <%= link_to "Manage Users", admin_path %>
-              <%= link_to "Create Category", admin_category_path %>
-              <%= link_to "Manage Inventory", admin_inventory_path %>
-            <% else %>
-              <%= link_to "Admin Log In", "/login" %>
-            <% end %>
-        <% end %>
+        
+
         
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
           <i class="fa fa-bars"></i>

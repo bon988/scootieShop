@@ -33,6 +33,10 @@ header {
   text-decoration: none;
   font-size:14px;
   
+  &.admin{
+  color: #87CEFA;
+  }
+  
 }
 
 .topnav a:hover {
@@ -44,10 +48,21 @@ header {
 .topnav a.active {
   background-color: #4CAF50;
   color: white;
+  
+  &.admin{
+  color: #87CEFA;
+  }
+  
+  
 }
 
 .topnav a:visited {
   color: white;
+  
+  &.admin{
+  color: #87CEFA;
+  }
+  
 }
 
 .topnav .icon {
