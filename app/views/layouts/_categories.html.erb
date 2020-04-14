@@ -3,7 +3,7 @@
 <div class="card-container">
 <% @categories.each do | category| %>
   <div class="card">
-    <p><b><%= category.title %></b></p>
+    <h4><%= category.title %></h4>
     <%= image_tag(category.image, :class => "img-item") %>
     <hr />
     <div class="container-card-text">
