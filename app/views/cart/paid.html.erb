@@ -1,0 +1,38 @@
+<div class = "payment">
+    <div id="header">
+        <h1>Thanks  <%= @user.name if !@user.name.blank? %>! Your payment is confirmed! </h1>
+    </div>
+    
+    <div class = "order-referenece">Order confirmation number: <%= @order.id %></div>
+    
+    <div class = "items-container">
+        <div class="order">
+        <% @total = 0 %>
+            <div class = "orderitem">
+                <div class = 'image-title'>Item</div>        
+                <div class = 'quantity'>Quantity</div>        
+                <div class = 'amount'>Amount</div>   
+            </div>
+        <% @orderitems.each do |id,quantity| %>
+            <div class = "orderitem">
+                <% item = Orderitem.find_by_id(id) %>
+                <div class ="image-title">
+                    <div class = "image"><%= link_to image_tag(Item.find_by_id(id).image_url, class: "image-thumbnail"), Item.find_by_id(id) %></div>
+                    <div class = "title"><%= link_to item.title, Item.find_by_id(id) %></div>
+                </div>
+                <div class = "quantity"><%= item.quantity %></div>
+                <div class = "amount"><%= number_to_currency(item.quantity * item.price, :unit => "€") %></div>
+            </div>
+              <% timx = (item.quantity * item.price)%>  
+              <% @total += timx %>
+          </div>
+        <% end %>
+        
+          <% tax = 30 %>
+          <% @overall = tax + @total%>
+         <div class = "total">
+              <div class = "tax">Tax &euro;30</div>
+              <div class = "total-paid">You Paid &euro; <%= @overall %></div>
+         </div>
+    </div>
+</div>
