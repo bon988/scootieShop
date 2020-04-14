@@ -89,3 +89,21 @@ Item.create([
         stock: 10,
     }]
 )
+
+Category.create([
+    {
+        title:"kick-scooter",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+        image: "https://scooter-ecommerce.s3.amazonaws.com/media/images/Kick_Scooter_HUDORA.jpg",
+    },
+    {
+        title:"e-scooter",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+        image: "https://scooter-ecommerce.s3.amazonaws.com/media/images/Kick_Scooter_HUDORA.jpg",
+    },
+    {
+        title:"kid-scooter",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+        image: "https://scooter-ecommerce.s3.amazonaws.com/media/images/Micro.jpg",
+    }
+])
