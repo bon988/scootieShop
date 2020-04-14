@@ -1,14 +1,16 @@
 <h2>Categories</h2>
 
-<% @categories.each do | category| %>
-    <div class="category">
-           <p><%= category.title %></p>
-            <p><%= category.description %></p>
+<div id="categorybox">
+    <% @categories.each do | category| %>
+        <div class="category">
+           <p><b><%= category.title %></b></p>
            <%= image_tag(category.image, :class => "img-item") %>
-            </div>
-             
-           <p><%= link_to category.title, {controller: "items", action: "category", title: category.title}, class: "buttons"%></a></p>
-    </div>
-<% end %>
+           <p><%= category.description %></p>
+           <p><%= link_to category.title, {controller: "items", action: "category", title: category.title}, class: "buttons" %></p>
+        </div>
+    <% end %>
+</div>
 
 
+
+ 
