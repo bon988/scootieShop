@@ -1,0 +1,29 @@
+#itemsContainer{
+    text-align:center;
+}
+table{
+ align-items: center;
+ justify-content: center;
+ padding: 10px;
+ display: flex;
+ 
+ border:solid gray 5px;
+ border-radius:6px;
+
+}
+.lineOrder{
+    border-bottom:solid black 5px;
+}
+
+td ,th{
+    text-align:center;
+    border-collapse:collapse;
+    border-bottom: 1px solid #000;
+}
+.totals{
+    text-align: center;
+    border-bottom:none
+}
+.return{
+    text-align:center;
+}

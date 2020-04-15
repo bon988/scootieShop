@@ -9,19 +9,23 @@
     
     <% if @order.user.email == @user.email %>
     
-    <div class="items-table-container" style="max-width: 800px">
+    <div class="items-table-container" style="max-width: 650px">
         <div class="items-table items-header">
           <div class="item-row" style="width: 300px">Order Date</div>
           <div class="item-row" style="width: 200px">Ordered By</div>
           <div class="item-row">Status</div>
-          <div class="item-row">Edit Order</div>
+          <% if session[:login] == 1 %>
+            <div class="item-row">Edit Order</div>
+          <% end %>
         </div>
       
         <div class="items-table row">
             <div class="item-row" style="width: 300px"><%= @order.order_date %></div>
             <div class="item-row" style="width: 200px"><%= @order.user.name %></div>
             <div class="item-row"><%= @order.status %></div>
-            <div class="item-row btn" style="width: 139px"><%= link_to 'Edit', edit_order_path(@order), :class =>"button" %></div>
+            <% if session[:login] == 1 %>
+              <div class="item-row btn" style="width: 139px"><%= link_to 'Edit', edit_order_path(@order), :class =>"button" %></div>
+            <% end %>
         </div>
       
     </div>
