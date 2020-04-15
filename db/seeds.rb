@@ -99,7 +99,7 @@ Category.create([
     {
         title:"e-scooter",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing",
-        image: "https://scooter-ecommerce.s3.amazonaws.com/media/images/Kick_Scooter_HUDORA.jpg",
+        image: "https://scooter-ecommerce.s3.amazonaws.com/media/images/eScooter_-_Micro.png",
     },
     {
         title:"kid-scooter",
