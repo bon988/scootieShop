@@ -20,7 +20,7 @@ class CartController < ApplicationController
     end
   
     redirect_to :action => :index
-    #redirect_to root_path
+    #redirect_back(fallback_location: root_path)
   end
   
   def reduce
@@ -93,5 +93,13 @@ class CartController < ApplicationController
     session[:cart] = nil
     
     #redirect_to '/orderConfirmed/'
+  end
+  
+  
+  def paid
+    @user = User.find(current_user.id)
+    @order = @user.orders.last
+    @order.status = "Paid"
+    @orderitems = @order.orderitems
   end
 end

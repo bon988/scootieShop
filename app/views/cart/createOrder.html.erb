@@ -33,13 +33,14 @@
           <td class="totals">Order Total: </td>
           <td class="totals" >&euro; <%= @total %></td>
        
-    <% shipping = 30 %>
-      <% @overall = shipping + @total%>
+    <% tax = 30 %>
+      <% @overall = tax + @total%>
       <tr>
           <td style="border-bottom:none"></td>
           <td style="border-bottom:none"></td>
           <td class="totals">Shipping:</td>
           <td class="totals"> &euro;30</td>
+
       </tr>
       <tr>
           <td style="border-bottom:none"></td>
@@ -62,9 +63,6 @@
                 <input type="hidden" name="return" value="#" > <!--this url shall be changed to "/paid" upon deployment-->
             </form>
          </td>
-         
-         
-
          
       </tr>
 

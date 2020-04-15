@@ -1,20 +1,22 @@
 <p id="notice"><%= notice %></p>
 
+<div class = "showcategory">
+  <p>
+    <strong>Title:</strong>
+    <%= @category.title %>
+  </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @category.title %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @category.description %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @category.description %>
-</p>
+  <p>
+    <strong>Image:</strong>
+    <%= @category.image %>
+  </p>
+</div>
 
-<p>
-  <strong>Image:</strong>
-  <%= @category.image %>
-</p>
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%= link_to 'Edit', edit_category_path(@category), :class => "btn edit" %> 
+<br />
+<%= link_to 'Back', categories_path, :class => "buttons"%>

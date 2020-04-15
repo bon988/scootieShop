@@ -2,10 +2,8 @@
 
 <%= render 'layouts/categories' %>
 
+<h2>All Products</h2>
 <hr class="line">
-
-<h2>Products</h2>
-
 <div class="card-container">
 <% @items.each do |item| %>
   <div class="card">
@@ -29,6 +27,7 @@
       <% end %>      
       
       <%= link_to 'Show', item, {:class => "btn"} %>
+      
       <% if session[:login] == 1 %>   
         <%= link_to 'Edit', edit_item_path(item), {:class => "btn"} %>
         <%= link_to 'Destroy', item, method: :delete, :class => "btn", data: { confirm: 'Are you sure?' } %>

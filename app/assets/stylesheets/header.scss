@@ -8,7 +8,7 @@ header {
         margin-top: 0px;
         padding-top: 80px;
         padding-bottom: 80px;
-        font-size: 80px;
+        font-size: 36px;
         letter-spacing: 3px;
 
         a {
@@ -16,6 +16,12 @@ header {
             text-decoration: none;
         }
     }
+}
+
+@media only screen and (min-width: 650px) {
+  h1 {
+    font-size: 80px !important;
+  }
 }
 
 
@@ -33,6 +39,10 @@ header {
   text-decoration: none;
   font-size:14px;
   
+  &.admin{
+  color: #87CEFA;
+  }
+  
 }
 
 .topnav a:hover {
@@ -44,17 +54,28 @@ header {
 .topnav a.active {
   background-color: #4CAF50;
   color: white;
+  
+  &.admin{
+  color: #87CEFA;
+  }
+  
+  
 }
 
 .topnav a:visited {
   color: white;
+  
+  &.admin{
+  color: #87CEFA;
+  }
+  
 }
 
 .topnav .icon {
   display: none;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 955px) {
   .topnav a:not(:first-child) {display: none;}
   .topnav a.icon {
     float: right;
@@ -62,7 +83,7 @@ header {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 955px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
     position: absolute;
