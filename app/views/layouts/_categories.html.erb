@@ -1,13 +1,13 @@
 <h2>Categories</h2>
 <hr class="line">
-<div id="categoriescontainer">
-  <div class="card-container">
-    <% @categories.each do | category| %>
-    <div class="card">
-      <h4> <%= category.title.sub('-',' ') %>s</h4>
-      <%= image_tag(category.image, :class => "img-item") %>
-      <hr />
-      <div class="container-card-text">
+
+<div class="card-container" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+<% @categories.each do | category| %>
+  <div class="card" style="box-shadow:none">
+    <h4><%= category.title.sub('-',' ') %>s</h4>
+    <%= image_tag(category.image, :class => "img-item") %>
+    <div class="container-card-text">
+
       <p><%= category.description %></p>
       </div>
      
