@@ -72,6 +72,8 @@ h2 {
 
 
 
+        
+
 .showitem{
     display:flex;
     flex-direction:column;
@@ -237,10 +239,13 @@ h2 {
 }
 
 .line {
-    width: 58px;
+    width: 120px;
     height: 4px;
     background: #9edbfa;
     border: none;
     margin-bottom: 40px;
 }
 
+#categoriescontainer{
+    margin-bottom: 100px;
+}
