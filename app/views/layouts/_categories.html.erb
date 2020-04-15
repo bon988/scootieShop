@@ -5,7 +5,7 @@
 <% @categories.each do | category| %>
   <div class="card" style="box-shadow:none">
     <h4><%= category.title.sub('-',' ') %>s</h4>
-    <%= image_tag(category.image, :class => "img-item") %>
+    <%= image_tag(category.image, :class => "img-item, img-height") %>
     <div class="container-card-text">
 
       <p><%= category.description %></p>
