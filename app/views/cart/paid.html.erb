@@ -1,6 +1,6 @@
 <div class = "payment">
     <div id="header">
-        <h1>Thanks  <%= @user.name if !@user.name.blank? %>! Your payment is confirmed! </h1>
+        <h2>Thanks  <%= @user.name if !@user.name.blank? %>! Your payment is confirmed! </h2>
     </div>
     
     <div class = "order-referenece">Order confirmation number: <%= @order.id %></div>
@@ -25,8 +25,9 @@
             </div>
               <% timx = (item.quantity * item.price)%>  
               <% @total += timx %>
-          </div>
         <% end %>
+        </div>
+
         
           <% tax = 30 %>
           <% @overall = tax + @total%>
