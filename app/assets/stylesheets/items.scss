@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 h2 {
     text-align: center;
+    color: #464E51;
+    text-transform: uppercase;
 }
 
 .card-container {
@@ -25,7 +27,7 @@ h2 {
 
         h4 {
             text-align: center;
-            font-size: 20px;
+            font-size: 15px;
             text-transform: capitalize;
         }
 
@@ -38,6 +40,7 @@ h2 {
 
         .container-card-text {
             padding: 2px 16px;
+            font-size: 5px;
         }
 
         .card-btns {
@@ -80,7 +83,7 @@ h2 {
     justify-content:center;
     align-items: center;
     
-  .showitem-container{
+    .showitem-container{
         display:flex;
         flex-direction:row;
         flex-wrap: wrap;
@@ -90,55 +93,49 @@ h2 {
         border-radius: 5px;
         box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 
-    .image{
         .image-item{
-            height: 400px;
+            height: 300px;
         }
-
-        
     }
-    
+
     .metadata{
         display:flex;
         flex-direction: column;
         justify-content: space-between;
         padding-left: 30px;
         
-        
-        .section{
-            border-bottom: 1px solid #dcdcdc;
-            padding: 20px;
+            .section{
+                border-bottom: 1px solid #dcdcdc;
+                padding: 20px;
             
-            .title{
-                font-size: 30px;
-                margin-bottom: 30px;
-                text-transform: uppercase;
-            }
-            
-            .price-cart{
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 10px;
-                
-                .price{
-                    font-size: 16px;
-                    font-weight: bold;
+                .title{
+                    font-size: 30px;
+                    margin-bottom: 30px;
+                    text-transform: uppercase;
                 }
+            
+                .price-cart{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 10px;
                 
-            
-            }
+                    .price{
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+                
+                }
                         
-            .stocks{
-                display:flex;
-                flex-direction: row;
-                justify-content: flex-end;
-                color: green;
-            }
+                .stocks{
+                    display:flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    color: green;
+                }
         
-            
-        }
+            }
         
         
         .btn {
@@ -152,14 +149,13 @@ h2 {
             border: 1px solid #9edbfa;
             transition: all 0.3s ease 0s;
                 
-
             &:hover {
                 background: #ffff;
                 border: 1px solid #9edbfa;
                 -webkit-box-shadow: 0px 5px 40px -10px #9edbfa;
                 -moz-box-shadow: 0px 5px 40px -10px #9edbfa;
-                box-shadow: 5px 40px -10px #9edbfa;
-                transition: all 0.4s ease 0s;
+                    ox-shadow: 5px 40px -10px #9edbfa;
+                   transition: all 0.4s ease 0s;
             }
                    
 
@@ -169,10 +165,10 @@ h2 {
                 color: white !important;
                 background: #003366;
                 
-                &:hover{
-                    color: #222;
-                    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-                    transform: scale(1.02,1.02);
+            &:hover{
+                color: #222;
+                box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+                transform: scale(1.02,1.02);
                 }
             }
             
@@ -200,52 +196,62 @@ h2 {
         
         }     
     }
-    }
+}
+
     
-    .othertitle{
+.othertitle{
         padding: 20px 0 ;
         border-top: 1px solid #dcdcdc;
         font-weight: bold;
-    }
+}
     
-    .description{
+.description{
         padding: 15px;
-    }
+}
     
-    .otheritems-container{
+    
+.otheritems-container{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+
+    .otheritem{
         display:flex;
-        flex-direction:row;
-        justify-content: space-between;
-
-
-        .otheritem{
-            display:flex;
-            flex-direction: column;
-            margin-bottom: 15px;
-            .image-thumbnail{
-                height: 90px;
-            }
+        flex-direction: column;
+        margin-bottom: 15px;
             
-            .itemtitle{
-                text-transform: uppercase;
-                font-weight: bold;
-                font-size: 10px;
-            }
+        .image-thumbnail{
+            height: 90px;
         }
-        
-
+            
+        .itemtitle{
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 10px;
+        }
     }
-    
 }
 
+
 .line {
-    width: 120px;
+    width: 50px;
     height: 4px;
     background: #9edbfa;
     border: none;
     margin-bottom: 40px;
 }
 
-#categoriescontainer{
-    margin-bottom: 100px;
+
+#categories-section{
+    .img-item {
+        height: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    
+    .card-container{
+        padding-bottom: 50px;
+        margin-bottom: 50px;
+    }
 }
