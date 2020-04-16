@@ -1,6 +1,4 @@
 .payment{
-    
-
      .items-container{
          display: flex;
          flex-direction: column;
@@ -19,6 +17,10 @@
                  flex-direction: row;
                  justify-content: center;
                  align-items: center;
+                 border-bottom: 1px solid #dcdcdc;
+                 padding-bottom: 10px;
+                 margin-bottom: 10px;
+
 
                  &:first-child{
                      margin-top: 20px;
@@ -27,11 +29,9 @@
                      text-transform: uppercase;
                      font-weight: bold;
                      background: #dcdcdc;
-                     border-bottom: 1px solid #dcdcdc;
                  }
                  
                  &:last-child{
-                     border-bottom: 1px solid #dcdcdc;
                      padding-bottom: 10px;
                  }
                  
