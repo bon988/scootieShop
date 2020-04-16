@@ -1,19 +1,21 @@
+
 <div id="itemsContainer">
-    <h2>Thank You<br>
-        You have just placed an order </h2>
+    <h1>Thank You <br> <br>
+        You have just placed an order! </h1>
 </div>
+<h2>Order reference for the order you just placed: <%= @order.id %></h2>
 
 <table id="customers">
     <tr>
-        <% @orders.id %>
-       <td>Order reference for the order you just placed <%= @order.id %></td>
-    </tr>
-</table>    
-
-<table id="customers">
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Price Total</th>
+        </tr>
     <% @total = 0 %>
     <% @orderitems.each do |id,quantity| %>
-      <tr>
+        
+      <tr class="lineOrder">
         <% item = Orderitem.find_by_id(id) %>
        
         <td><%= item.title %></td>
@@ -25,18 +27,32 @@
           <% @total += timx %>
       </tr>
     <% end %>
-    
-    <td>Order Total: &euro; <%= @total %></td>
+    <br>
+          <td  style="border-bottom:none"></td>
+          <td style="border-bottom:none"></td>
+          <td class="totals">Order Total: </td>
+          <td class="totals" >&euro; <%= @total %></td>
        
     <% tax = 30 %>
       <% @overall = tax + @total%>
       <tr>
-          <td>Tax &euro;30</td>
-          <td>You Pay &euro; <%= @overall %></td>
+          <td style="border-bottom:none"></td>
+          <td style="border-bottom:none"></td>
+          <td class="totals">Shipping:</td>
+          <td class="totals"> &euro;30</td>
+
       </tr>
+      <tr>
+          <td style="border-bottom:none"></td>
+          <td style="border-bottom:none"></td>
+          <td  class="totals">You Pay:</td>
+          <td class="totals"> &euro; <%= @overall %></td>
+      </tr>
+      
         <tr>
-         
-         <td>
+         <td style="border-bottom:none"></td>
+         <td style="border-bottom:none"></td>
+         <td style="border-bottom:none" class="return">
              <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
                  <input type="hidden" name="cmd" value="_xclick">
                  <input type="hidden" name="business" value="wbnicanor01@gmail.com">
@@ -47,8 +63,6 @@
                 <input type="hidden" name="return" value="https://scootieshop.herokuapp.com/paid" > <!--this url shall be changed to "/paid" upon deployment-->
             </form>
          </td>
-         
-        <%# <td><h2>  <a href="/paid/<%= @order.id %>" class="button">Pay Now</a></h2></td> %>
          
       </tr>
 
