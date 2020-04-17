@@ -1,22 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <div class = "showcategory">
-  <p>
-    <strong>Title:</strong>
+  <h2>
     <%= @category.title %>
-  </p>
+  </h2>
 
   <p>
-    <strong>Description:</strong>
+    <%= image_tag(@category.image) %>
+  </p>
+  
+  
+  <p>
     <%= @category.description %>
-  </p>
-
-  <p>
-    <strong>Image:</strong>
-    <%= @category.image %>
   </p>
 </div>
 
-<%= link_to 'Edit', edit_category_path(@category), :class => "btn edit" %> 
-<br />
+<%= link_to 'Edit', edit_category_path(@category), :class => "buttons" %> 
 <%= link_to 'Back', categories_path, :class => "buttons"%>
